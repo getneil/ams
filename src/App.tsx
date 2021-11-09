@@ -9,8 +9,10 @@ function App() {
   const candidates = useCandidates();
 
   return (
-    <div className="App">
-      <CandidatesTable candidates={candidates} />
+    <div className="App" style={{ display:"flex", flexDirection: "row" }}>
+      <section>
+        <CandidatesTable candidates={candidates} />
+      </section>
       <CandidateForm />
     </div>
   );
