@@ -16,10 +16,11 @@ function CandidatesTable({ candidates }: Props) {
           <th>Email</th>
           <th>Interview Score</th>
           <th>Technical Score</th>
+          <th>Score Sum</th>
           <th>Application Date</th>
         </tr>
         {
-          candidates.map((candidate) => {
+          candidates.map((candidate, i) => {
             return (
               <tr key={candidate.email}>
                 <td>{candidate.first_name} {candidate.last_name}</td>
@@ -27,6 +28,7 @@ function CandidatesTable({ candidates }: Props) {
                 <td>{candidate.email}</td>
                 <td>{candidate.interview_score}</td>
                 <td>{candidate.technical_score}</td>
+                <td>{candidate.technical_score + candidate.interview_score}</td>
                 <td>{candidate.created_at.toLocaleString("en-US")}</td>
               </tr>
             )
